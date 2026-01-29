@@ -16,7 +16,7 @@ window.SITE = {
     "Small home repairs and installs done right. Call or text for a quick estimate.",
 
   checks: ["Fast scheduling", "Text-friendly", "Local service"],
-  pills: ["Repairs and installs", "Upfront communication", "Quality work"],
+  pills: ["Junk removal", "Cleanouts", "Dumpsters available"],
 
   services: [
     {

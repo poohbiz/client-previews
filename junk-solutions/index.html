@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Junk Solutions | Quincy, IL</title>
+    <meta
+      name="description"
+      content="Full-service junk removal in Quincy, IL. Fast pickup, clean hauling, and dumpster rental available. Call or text for a quick quote."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="sticky">
+      <div class="wrap bar">
+        <div class="brandBlock">
+          <img class="logo" id="logoImg" alt="" />
+          <div class="brandText">
+            <div class="brand" id="bizName"></div>
+            <div class="demoBadge" id="tagline">
+              Preview mockup—details can be adjusted.
+            </div>
+          </div>
+        </div>
+        <div class="btns">
+          <a class="btn" id="callBtn" href="#">Call</a>
+          <a class="btn" id="textBtn" href="#">Text</a>
+          <a class="btn primary" id="ctaBtn" href="#quote">Free Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <main class="wrap">
+      <section class="hero">
+        <div class="grid heroGrid">
+          <div>
+            <h1 id="headline"></h1>
+            <p class="sub" id="subhead"></p>
+
+            <div class="checks" id="checks"></div>
+
+            <div class="trust" id="pills"></div>
+          </div>
+
+          <div class="card form" id="quote">
+            <h2 class="title formTitle" id="formTitle">Get a Free Quote</h2>
+            <p class="sub formSub">Send details and we’ll respond quickly.</p>
+
+            <!-- Mockup-only form: wire up action/provider later -->
+            <form id="quoteForm">
+              <label for="name">Name</label>
+              <input
+                id="name"
+                name="name"
+                placeholder="Your name"
+                autocomplete="name"
+                required
+              />
+
+              <label for="phone">Phone</label>
+              <input
+                id="phone"
+                name="phone"
+                placeholder="(217) 555-1234"
+                type="tel"
+                autocomplete="tel"
+                required
+              />
+
+              <label for="details">What do you need removed?</label>
+              <textarea
+                id="details"
+                name="details"
+                placeholder="Example: couch + mattress, garage cleanout, brush pile, construction debris. Address (optional)."
+              ></textarea>
+
+              <button class="btn primary full" id="formSubmit" type="submit">
+                Request Quote
+              </button>
+            </form>
+
+            <div class="fine" id="mockupNote">
+              Mockup preview. Final version can include real form delivery +
+              call tracking.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="title">Services</h2>
+        <div class="cols3" id="services"></div>
+      </section>
+
+      <section class="section">
+        <h2 class="title">Common Items We Remove</h2>
+        <p class="sub">
+          Furniture, appliances, mattresses, yard debris, and full cleanouts
+        </p>
+        <div class="gallery">
+          <!-- <img
+              class="gal"
+              src="driveway-before-after.webp"
+              alt="Example before-and-after: driveway cleaned"
+              loading="lazy"
+              decoding="async"
+            /> -->
+          <div class="ph">Furniture Removal</div>
+          <div class="ph">Garage Cleanout</div>
+          <div class="ph">Construction Debris</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="title">How It Works</h2>
+        <div class="cols3">
+          <div class="item">
+            <b>1) Request a quote</b>Call, text, or fill out the form.
+          </div>
+          <div class="item">
+            <b>2) We schedule fast</b>Confirm details and lock in a time.
+          </div>
+          <div class="item">
+            <b>3) We haul it away (and sweep up)</b>You get the curb appeal
+            back.
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="title">What Customers Say</h2>
+        <div class="cols3" id="testimonials"></div>
+      </section>
+
+      <section class="section">
+        <h2 class="title">FAQ</h2>
+        <div class="cols3" id="faqs"></div>
+      </section>
+
+      <section class="section">
+        <div class="card">
+          <h2 class="title noTop" id="serviceAreaTitle"></h2>
+          <p class="sub" id="serviceAreaText"></p>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footLine">
+          <b id="bizNameFooter"></b> • <span id="cityState"></span> •
+          <a id="footerPhone" type="tel" href="#"></a>
+        </div>
+        <div class="fine">
+          Preview mockup. Final build can include real form delivery + analytics
+          + call tracking.
+        </div>
+      </footer>
+    </main>
+
+    <div class="toast" id="toast" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
