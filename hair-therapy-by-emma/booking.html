@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Booking | Hair Therapy by Emma</title>
+    <meta
+      name="description"
+      content="Book online or text Emma to choose the right appointment."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body data-page="booking">
+    <header class="header header--simple">
+      <div class="container header__inner">
+        <a class="brand" href="./index.html" aria-label="Home">
+          <img
+            class="brand__logo"
+            src="./assets/logo.jpeg"
+            alt="Hair Therapy by Emma logo"
+          />
+          <div class="brand__text">
+            <div class="brand__name">Hair Therapy</div>
+            <div class="brand__sub">by Emma</div>
+          </div>
+        </a>
+
+        <button
+          class="navbtn"
+          id="navbtn"
+          aria-expanded="false"
+          aria-controls="nav"
+        >
+          <span class="navbtn__line"></span><span class="navbtn__line"></span
+          ><span class="navbtn__line"></span>
+          <span class="sr-only">Open menu</span>
+        </button>
+
+        <nav class="nav" id="nav">
+          <a href="./services.html">Services</a>
+          <a href="./gallery.html">Gallery</a>
+          <a href="./about.html">About</a>
+          <a href="./contact.html">Contact</a>
+          <a class="btn btn--small" data-bind="bookingHref" href="#"
+            >Book Now</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="pagehero">
+        <div class="container pagehero__inner reveal">
+          <h1>Booking</h1>
+          <p>
+            Book online anytime. If you’re not sure what to choose, text Emma
+            and she’ll help.
+          </p>
+          <div class="cta">
+            <a class="btn" data-bind="bookingHref" href="#">Book on Square</a>
+            <a class="btn btn--ghost" data-bind="textHref" href="#"
+              >Text Emma</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container twocol">
+          <div class="panel reveal">
+            <h2>What should I book?</h2>
+            <div class="qa">
+              <details>
+                <summary>I want brighter hair / dimension</summary>
+                <p>
+                  Start with foils. If you want a bigger change, text Emma and
+                  she’ll guide you.
+                </p>
+              </details>
+              <details>
+                <summary>I want vivid color (greens, blues, etc.)</summary>
+                <p>
+                  Book vivid color. A consult is recommended for major
+                  transformations.
+                </p>
+              </details>
+              <details>
+                <summary>I just need a fresh shape</summary>
+                <p>
+                  Book a haircut. Bring inspiration photos if you have them.
+                </p>
+              </details>
+            </div>
+          </div>
+
+          <div class="panel reveal">
+            <h2>Policies (edit me)</h2>
+            <p class="muted">
+              Replace this with Emma’s real policies once confirmed.
+            </p>
+            <ul class="bullets">
+              <li>
+                Please arrive on time (late arrivals may shorten service time)
+              </li>
+              <li>Reschedule/cancel with notice when possible</li>
+              <li>Color appointments may require consultation</li>
+            </ul>
+
+            <div class="section__cta">
+              <a class="btn btn--ghost" href="./contact.html"
+                >Contact / Location</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div>
+          <div class="footer__brand">Hair Therapy by Emma</div>
+          <div class="footer__meta" data-bind="locationLong">
+            Located inside Cafe6 • By appointment
+          </div>
+        </div>
+        <div class="footer__links">
+          <a data-bind="igHref" href="#">Instagram</a>
+          <a data-bind="bookingHref" href="#">Book</a>
+        </div>
+        <div class="footer__meta">© <span id="year"></span></div>
+      </div>
+    </footer>
+
+    <div class="stickybook" id="stickybook">
+      <a class="btn" data-bind="bookingHref" href="#">Book Now</a>
+      <a class="btn btn--ghost" data-bind="textHref" href="#">Text</a>
+    </div>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

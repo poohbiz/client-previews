@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Services | Hair Therapy by Emma</title>
+    <meta
+      name="description"
+      content="Vivid color, foils, and haircuts. Learn what to book and what to expect."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body data-page="services">
+    <header class="header header--simple">
+      <div class="container header__inner">
+        <a class="brand" href="./index.html" aria-label="Home">
+          <img
+            class="brand__logo"
+            src="./assets/logo.jpeg"
+            alt="Hair Therapy by Emma logo"
+          />
+          <div class="brand__text">
+            <div class="brand__name">Hair Therapy</div>
+            <div class="brand__sub">by Emma</div>
+          </div>
+        </a>
+
+        <button
+          class="navbtn"
+          id="navbtn"
+          aria-expanded="false"
+          aria-controls="nav"
+        >
+          <span class="navbtn__line"></span><span class="navbtn__line"></span
+          ><span class="navbtn__line"></span>
+          <span class="sr-only">Open menu</span>
+        </button>
+
+        <nav class="nav" id="nav">
+          <a href="./services.html" aria-current="page">Services</a>
+          <a href="./gallery.html">Gallery</a>
+          <a href="./about.html">About</a>
+          <a href="./contact.html">Contact</a>
+          <a class="btn btn--small" data-bind="bookingHref" href="#"
+            >Book Now</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="pagehero">
+        <div class="container pagehero__inner reveal">
+          <h1>Services</h1>
+          <p>
+            Not sure what to book? Text Emma and she’ll help you choose the
+            right appointment.
+          </p>
+          <div class="cta">
+            <a class="btn" data-bind="bookingHref" href="#">Book on Square</a>
+            <a class="btn btn--ghost" data-bind="textHref" href="#"
+              >Text Emma</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="servicegrid">
+            <article class="service reveal" id="vivid">
+              <div class="service__head">
+                <h2>Vivid Color</h2>
+                <span class="chip">High-impact</span>
+              </div>
+              <p class="service__lead">
+                Bold panels, money pieces, or full vivid transformations—custom
+                designed for your hair and vibe.
+              </p>
+
+              <div class="service__cols">
+                <div class="service__box">
+                  <h3>Perfect for</h3>
+                  <ul>
+                    <li>Vivid panels, accents, or full vivid</li>
+                    <li>Clients who want a signature look</li>
+                    <li>People who love creative color</li>
+                  </ul>
+                </div>
+                <div class="service__box">
+                  <h3>Good to know</h3>
+                  <ul>
+                    <li>Consult recommended for big changes</li>
+                    <li>Maintenance varies by shade & routine</li>
+                    <li>Aftercare helps color stay vibrant</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="service__cta">
+                <a class="btn" data-bind="bookingHref" href="#"
+                  >Book vivid color</a
+                >
+                <a class="textlink" href="./gallery.html#vivid"
+                  >See vivid work →</a
+                >
+              </div>
+            </article>
+
+            <article class="service reveal" id="foils">
+              <div class="service__head">
+                <h2>Foils</h2>
+                <span class="chip">Lived-in</span>
+              </div>
+              <p class="service__lead">
+                Brightening, face framing, and dimensional foil work designed to
+                grow out soft and natural.
+              </p>
+
+              <div class="service__cols">
+                <div class="service__box">
+                  <h3>Perfect for</h3>
+                  <ul>
+                    <li>Blonde refresh or dimension</li>
+                    <li>Face framing brightness</li>
+                    <li>Low-maintenance grow-out</li>
+                  </ul>
+                </div>
+                <div class="service__box">
+                  <h3>Good to know</h3>
+                  <ul>
+                    <li>Toning/gloss makes it look finished</li>
+                    <li>Timing varies by density and goal</li>
+                    <li>We’ll choose the best placement</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="service__cta">
+                <a class="btn" data-bind="bookingHref" href="#">Book foils</a>
+                <a class="textlink" href="./gallery.html#foils"
+                  >See foil work →</a
+                >
+              </div>
+            </article>
+
+            <article class="service reveal" id="cuts">
+              <div class="service__head">
+                <h2>Haircuts</h2>
+                <span class="chip">Clean</span>
+              </div>
+              <p class="service__lead">
+                Wearable cuts with movement and shape that lasts—so styling
+                feels easy, not stressful.
+              </p>
+
+              <div class="service__cols">
+                <div class="service__box">
+                  <h3>Perfect for</h3>
+                  <ul>
+                    <li>Fresh shape + healthy ends</li>
+                    <li>Low effort daily styling</li>
+                    <li>Short, medium, or long cuts</li>
+                  </ul>
+                </div>
+                <div class="service__box">
+                  <h3>Good to know</h3>
+                  <ul>
+                    <li>Bring inspo photos if you have them</li>
+                    <li>We’ll tailor to your face + routine</li>
+                    <li>Trim schedule depends on your goals</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="service__cta">
+                <a class="btn" data-bind="bookingHref" href="#"
+                  >Book a haircut</a
+                >
+                <a class="textlink" href="./gallery.html#cuts">See cuts →</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="final">
+        <div class="container final__inner reveal">
+          <div>
+            <h2>Not sure what to choose?</h2>
+            <p>Text Emma and she’ll point you to the right booking option.</p>
+          </div>
+          <div class="final__cta">
+            <a class="btn" data-bind="textHref" href="#">Text Emma</a>
+            <a class="btn btn--ghost" data-bind="bookingHref" href="#"
+              >Book Now</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div>
+          <div class="footer__brand">Hair Therapy by Emma</div>
+          <div class="footer__meta" data-bind="locationLong">
+            Located inside Cafe6 • By appointment
+          </div>
+        </div>
+        <div class="footer__links">
+          <a data-bind="igHref" href="#">Instagram</a>
+          <a data-bind="bookingHref" href="#">Book</a>
+        </div>
+        <div class="footer__meta">© <span id="year"></span></div>
+      </div>
+    </footer>
+
+    <div class="stickybook" id="stickybook">
+      <a class="btn" data-bind="bookingHref" href="#">Book Now</a>
+      <a class="btn btn--ghost" data-bind="textHref" href="#">Text</a>
+    </div>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

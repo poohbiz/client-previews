@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Gallery | Hair Therapy by Emma</title>
+    <meta
+      name="description"
+      content="Browse vivid color, foils, and haircuts."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body data-page="gallery">
+    <header class="header header--simple">
+      <div class="container header__inner">
+        <a class="brand" href="./index.html" aria-label="Home">
+          <img
+            class="brand__logo"
+            src="./assets/logo.jpeg"
+            alt="Hair Therapy by Emma logo"
+          />
+          <div class="brand__text">
+            <div class="brand__name">Hair Therapy</div>
+            <div class="brand__sub">by Emma</div>
+          </div>
+        </a>
+
+        <button
+          class="navbtn"
+          id="navbtn"
+          aria-expanded="false"
+          aria-controls="nav"
+        >
+          <span class="navbtn__line"></span><span class="navbtn__line"></span
+          ><span class="navbtn__line"></span>
+          <span class="sr-only">Open menu</span>
+        </button>
+
+        <nav class="nav" id="nav">
+          <a href="./services.html">Services</a>
+          <a href="./gallery.html" aria-current="page">Gallery</a>
+          <a href="./about.html">About</a>
+          <a href="./contact.html">Contact</a>
+          <a class="btn btn--small" data-bind="bookingHref" href="#"
+            >Book Now</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="pagehero">
+        <div class="container pagehero__inner reveal">
+          <h1>Gallery</h1>
+          <p>Tap any photo to expand. Use filters to browse by vibe.</p>
+          <div class="filters" id="filters"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="masonry reveal" id="galleryGrid"></div>
+        </div>
+      </section>
+
+      <section class="final">
+        <div class="container final__inner reveal">
+          <div>
+            <h2>Want something like this?</h2>
+            <p>
+              Book online anytime—or text Emma if you’re unsure what to pick.
+            </p>
+          </div>
+          <div class="final__cta">
+            <a class="btn" data-bind="bookingHref" href="#">Book Now</a>
+            <a class="btn btn--ghost" data-bind="textHref" href="#"
+              >Text Emma</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div>
+          <div class="footer__brand">Hair Therapy by Emma</div>
+          <div class="footer__meta" data-bind="locationLong">
+            Located inside Cafe6 • By appointment
+          </div>
+        </div>
+        <div class="footer__links">
+          <a data-bind="igHref" href="#">Instagram</a>
+          <a data-bind="bookingHref" href="#">Book</a>
+        </div>
+        <div class="footer__meta">© <span id="year"></span></div>
+      </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox__close" id="lbClose" aria-label="Close">✕</button>
+      <button
+        class="lightbox__nav lightbox__nav--prev"
+        id="lbPrev"
+        aria-label="Previous"
+      >
+        ‹
+      </button>
+      <button
+        class="lightbox__nav lightbox__nav--next"
+        id="lbNext"
+        aria-label="Next"
+      >
+        ›
+      </button>
+      <img class="lightbox__img" id="lbImg" alt="Expanded photo" />
+      <div class="lightbox__cap" id="lbCap"></div>
+    </div>
+
+    <div class="stickybook" id="stickybook">
+      <a class="btn" data-bind="bookingHref" href="#">Book Now</a>
+      <a class="btn btn--ghost" data-bind="textHref" href="#">Text</a>
+    </div>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

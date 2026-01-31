@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>About | Hair Therapy by Emma</title>
+    <meta
+      name="description"
+      content="A calm appointment where you’re listened to, and your look is customized."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body data-page="about">
+    <header class="header header--simple">
+      <div class="container header__inner">
+        <a class="brand" href="./index.html" aria-label="Home">
+          <img
+            class="brand__logo"
+            src="./assets/logo.jpeg"
+            alt="Hair Therapy by Emma logo"
+          />
+          <div class="brand__text">
+            <div class="brand__name">Hair Therapy</div>
+            <div class="brand__sub">by Emma</div>
+          </div>
+        </a>
+
+        <button
+          class="navbtn"
+          id="navbtn"
+          aria-expanded="false"
+          aria-controls="nav"
+        >
+          <span class="navbtn__line"></span><span class="navbtn__line"></span
+          ><span class="navbtn__line"></span>
+          <span class="sr-only">Open menu</span>
+        </button>
+
+        <nav class="nav" id="nav">
+          <a href="./services.html">Services</a>
+          <a href="./gallery.html">Gallery</a>
+          <a href="./about.html" aria-current="page">About</a>
+          <a href="./contact.html">Contact</a>
+          <a class="btn btn--small" data-bind="bookingHref" href="#"
+            >Book Now</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="pagehero">
+        <div class="container pagehero__inner reveal">
+          <h1>About</h1>
+          <p>
+            Hair Therapy is a calm appointment where you can breathe—and leave
+            feeling confident.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="twocol">
+            <div class="panel reveal">
+              <h2>The vibe</h2>
+              <p>
+                This isn’t a rushed chair-turn. It’s one-on-one time to talk
+                through your goals, build a plan that makes sense for your
+                lifestyle, and create hair you actually love living in.
+              </p>
+              <ul class="bullets">
+                <li>Clear communication</li>
+                <li>Customized placement & formulas</li>
+                <li>Comfortable, intentional appointments</li>
+              </ul>
+            </div>
+
+            <div class="panel reveal">
+              <h2>What to expect</h2>
+              <div class="steps steps--compact">
+                <div class="step">
+                  <div class="step__num">01</div>
+                  <h3>Consult</h3>
+                  <p>
+                    We’ll talk goals, inspiration, and what “easy maintenance”
+                    means for you.
+                  </p>
+                </div>
+                <div class="step">
+                  <div class="step__num">02</div>
+                  <h3>Create</h3>
+                  <p>
+                    We build the look—carefully, with intention (and no
+                    rushing).
+                  </p>
+                </div>
+                <div class="step">
+                  <div class="step__num">03</div>
+                  <h3>Aftercare</h3>
+                  <p>Simple recommendations so it stays vibrant and healthy.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section__cta reveal">
+            <a class="btn" data-bind="bookingHref" href="#">Book on Square</a>
+            <a class="btn btn--ghost" data-bind="textHref" href="#"
+              >Text Emma</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="final">
+        <div class="container final__inner reveal">
+          <div>
+            <h2>Ready for your reset?</h2>
+            <p>Book online anytime. New clients welcome.</p>
+          </div>
+          <div class="final__cta">
+            <a class="btn" data-bind="bookingHref" href="#">Book Now</a>
+            <a class="btn btn--ghost" href="./services.html">See services</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div>
+          <div class="footer__brand">Hair Therapy by Emma</div>
+          <div class="footer__meta" data-bind="locationLong">
+            Located inside Cafe6 • By appointment
+          </div>
+        </div>
+        <div class="footer__links">
+          <a data-bind="igHref" href="#">Instagram</a>
+          <a data-bind="bookingHref" href="#">Book</a>
+        </div>
+        <div class="footer__meta">© <span id="year"></span></div>
+      </div>
+    </footer>
+
+    <div class="stickybook" id="stickybook">
+      <a class="btn" data-bind="bookingHref" href="#">Book Now</a>
+      <a class="btn btn--ghost" data-bind="textHref" href="#">Text</a>
+    </div>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
