@@ -33,6 +33,9 @@
     (el) => (el.textContent = SITE.responseTime || "Within 24 hours"),
   );
   qsa('[data-bind="mapsHref"]').forEach((a) => (a.href = SITE.mapsUrl || "#"));
+  qsa('[data-bind="mapsEmbedSrc"]').forEach((iframe) => {
+    iframe.src = SITE.mapsEmbedUrl || "#";
+  });
   qsa('[data-bind="stylistPhoto"]').forEach((img) => {
     if (SITE.stylistPhoto) img.src = SITE.stylistPhoto;
     if (SITE.stylistName) img.alt = SITE.stylistName;

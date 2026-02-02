@@ -94,10 +94,17 @@
             </p>
 
             <div class="mapbox">
-              <p class="muted">Optional: add a Google Maps embed later.</p>
-              <p class="muted">
-                For now, use the address text and a “Get directions” link.
-              </p>
+              <div class="mapembed" aria-label="Map">
+                <iframe
+                  class="mapembed__frame"
+                  data-bind="mapsEmbedSrc"
+                  title="Hair Therapy by Emma location"
+                  src="#"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen
+                ></iframe>
+              </div>
               <a class="btn btn--ghost" data-bind="mapsHref" href="#"
                 >Get directions</a
               >
