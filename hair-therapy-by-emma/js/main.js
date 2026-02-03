@@ -7,12 +7,134 @@
   const qs = (sel, root = document) => root.querySelector(sel);
   const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
+  // ===== BEGIN TRACKING HELPERS =====
+  // Minimal GA4 + attribution (UTM) capture. Safe if ga4Id is blank.
+  const ATTR_KEYS = [
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_content",
+    "utm_term",
+    "src",
+    "gclid",
+    "fbclid",
+  ];
+
+  function readAttributionFromUrl() {
+    const params = new URLSearchParams(window.location.search || "");
+    const out = {};
+    ATTR_KEYS.forEach((k) => {
+      const v = params.get(k);
+      if (v) out[k] = v;
+    });
+    return out;
+  }
+
+  function getAttribution() {
+    try {
+      const raw = sessionStorage.getItem("ht_attrib");
+      return raw ? JSON.parse(raw) : {};
+    } catch {
+      return {};
+    }
+  }
+
+  function storeAttribution() {
+    const fresh = readAttributionFromUrl();
+    if (!Object.keys(fresh).length) return;
+    const prev = getAttribution();
+    const merged = { ...prev, ...fresh };
+    try {
+      sessionStorage.setItem("ht_attrib", JSON.stringify(merged));
+    } catch {}
+  }
+
+  function buildOutboundUrl(url) {
+    try {
+      if (!url || url === "#") return url;
+
+      // Only append params to absolute http(s) URLs (Square booking, Maps share URLs, etc.)
+      const isAbsolute = /^https?:\/\//i.test(url);
+      if (!isAbsolute) return url;
+
+      const u = new URL(url);
+      const attrib = getAttribution();
+      Object.entries(attrib).forEach(([k, v]) => {
+        if (!u.searchParams.get(k)) u.searchParams.set(k, String(v));
+      });
+      return u.toString();
+    } catch {
+      return url;
+    }
+  }
+
+  // GA4 init (only if ID provided)
+  function initGa4() {
+    const tid = (SITE.tracking && SITE.tracking.ga4Id) || "";
+    if (!tid) return;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag =
+      window.gtag ||
+      function () {
+        window.dataLayer.push(arguments);
+      };
+
+    // Load gtag script async
+    const s = document.createElement("script");
+    s.async = true;
+    s.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(
+      tid,
+    )}`;
+    document.head.appendChild(s);
+
+    window.gtag("js", new Date());
+    // Disable auto page_view so we can control it (works with static multi-page sites)
+    window.gtag("config", tid, { send_page_view: false });
+  }
+
+  function track(eventName, props = {}) {
+    const debug = !!(SITE.tracking && SITE.tracking.debug);
+    const tid = (SITE.tracking && SITE.tracking.ga4Id) || "";
+    const attrib = getAttribution();
+    const payload = { ...attrib, ...props };
+
+    if (tid && typeof window.gtag === "function") {
+      window.gtag("event", eventName, payload);
+    } else if (debug) {
+      // eslint-disable-next-line no-console
+      console.log("[track]", eventName, payload);
+    }
+  }
+
+  function trackPageView() {
+    const tid = (SITE.tracking && SITE.tracking.ga4Id) || "";
+    if (tid && typeof window.gtag === "function") {
+      window.gtag("event", "page_view", {
+        page_location: window.location.href,
+        page_path:
+          window.location.pathname +
+          window.location.search +
+          window.location.hash,
+      });
+    } else if (SITE.tracking && SITE.tracking.debug) {
+      // eslint-disable-next-line no-console
+      console.log("[track] page_view", window.location.pathname);
+    }
+  }
+
+  // Must run AFTER helpers are defined
+  storeAttribution();
+  initGa4();
+  trackPageView();
+  // ===== END TRACKING HELPERS =====
+
   const phoneRaw = (SITE.phone || "").replace(/\s/g, "");
   const phonePretty = formatPhonePretty(phoneRaw);
 
   // Bind common links/text
   qsa('[data-bind="bookingHref"]').forEach(
-    (a) => (a.href = SITE.bookingUrl || "#"),
+    (a) => (a.href = buildOutboundUrl(SITE.bookingUrl) || "#"),
   );
   qsa('[data-bind="igHref"]').forEach(
     (a) => (a.href = SITE.instagramUrl || "#"),
@@ -32,9 +154,33 @@
   qsa('[data-bind="responseTime"]').forEach(
     (el) => (el.textContent = SITE.responseTime || "Within 24 hours"),
   );
-  qsa('[data-bind="mapsHref"]').forEach((a) => (a.href = SITE.mapsUrl || "#"));
+  qsa('[data-bind="mapsHref"]').forEach(
+    (a) => (a.href = buildOutboundUrl(SITE.mapsUrl) || "#"),
+  );
   qsa('[data-bind="mapsEmbedSrc"]').forEach((iframe) => {
     iframe.src = SITE.mapsEmbedUrl || "#";
+  });
+
+  // Track key conversion clicks
+  qsa('[data-bind="bookingHref"]').forEach((el) => {
+    el.addEventListener("click", () =>
+      track("book_click", { href: el.getAttribute("href") || "" }),
+    );
+  });
+  qsa('[data-bind="textHref"]').forEach((el) => {
+    el.addEventListener("click", () =>
+      track("text_click", { href: el.getAttribute("href") || "" }),
+    );
+  });
+  qsa('[data-bind="igHref"]').forEach((el) => {
+    el.addEventListener("click", () =>
+      track("instagram_click", { href: el.getAttribute("href") || "" }),
+    );
+  });
+  qsa('[data-bind="mapsHref"]').forEach((el) => {
+    el.addEventListener("click", () =>
+      track("directions_click", { href: el.getAttribute("href") || "" }),
+    );
   });
   qsa('[data-bind="stylistPhoto"]').forEach((img) => {
     if (SITE.stylistPhoto) img.src = SITE.stylistPhoto;
@@ -97,6 +243,7 @@
       const btn = e.target.closest("[data-filter]");
       if (!btn) return;
       active = btn.getAttribute("data-filter");
+      track("gallery_filter", { filter: active });
       setActiveFilter(filtersEl, active);
       renderGallery(grid, GALLERY, active);
       setHashTag(active);
@@ -127,6 +274,10 @@
     qsa("[data-lb-idx]", container).forEach((tile) => {
       tile.addEventListener("click", () => {
         const idx = Number(tile.getAttribute("data-lb-idx"));
+        track("lightbox_open", {
+          index: idx,
+          caption: (items[idx] || {}).caption || "",
+        });
         lb.open(items, idx);
       });
     });

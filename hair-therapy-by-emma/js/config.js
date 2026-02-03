@@ -6,6 +6,11 @@ window.SITE = {
   instagramUrl: "#", // https://instagram.com/...
   responseTime: "Within 24 hours",
 
+  // Tracking (safe: leave ga4Id blank until ready)
+  tracking: {
+    ga4Id: "G-JYXB905G79", // e.g. "G-XXXXXXXXXX"
+    debug: true, // set false after launch
+  },
   // Location strings used on the page
   locationShort: "Inside Cafe6 • By appointment",
   locationLong:
