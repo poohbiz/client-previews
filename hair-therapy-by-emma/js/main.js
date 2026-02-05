@@ -151,6 +151,12 @@
   qsa('[data-bind="locationLong"]').forEach(
     (el) => (el.textContent = SITE.locationLong || ""),
   );
+  qsa('[data-bind="moveBannerText"]').forEach(
+    (el) => (el.textContent = SITE.moveBannerText || ""),
+  );
+  qsa('[data-bind="moveBannerCta"]').forEach(
+    (el) => (el.textContent = SITE.moveBannerCta || ""),
+  );
   qsa('[data-bind="responseTime"]').forEach(
     (el) => (el.textContent = SITE.responseTime || "Within 24 hours"),
   );

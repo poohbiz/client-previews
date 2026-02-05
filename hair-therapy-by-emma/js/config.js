@@ -11,6 +11,10 @@ window.SITE = {
     ga4Id: "G-JYXB905G79", // e.g. "G-XXXXXXXXXX"
     debug: true, // set false after launch
   },
+  moveBannerText:
+    "Moving to Hannibal, MO — closed through February. Booking March now.",
+  moveBannerCta: "Book March",
+
   // Location strings used on the page
   locationShort: "Inside Cafe6 • By appointment",
   locationLong:
