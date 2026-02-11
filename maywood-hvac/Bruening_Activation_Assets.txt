@@ -1,0 +1,56 @@
+Bruening_Activation_Assets.txt
+================================
+Concept System: Busy-Line HVAC Service Link (missed-call catcher + request form)
+
+IMPORTANT: Replace <YOUR_SYSTEM_LINK> with the live system URL.
+
+------------------------------------------------------------
+3 POST CAPTIONS (copy/paste)
+------------------------------------------------------------
+
+1) After-hours hook
+On a job or after-hours? No problem.
+Request service here and we’ll call/text to confirm details ASAP:
+<YOUR_SYSTEM_LINK>
+
+2) Busy-line hook
+If you tried calling and couldn’t reach us, don’t lose your spot.
+Use this quick service link and we’ll follow up fast:
+<YOUR_SYSTEM_LINK>
+
+3) Seasonal maintenance hook
+Time for a tune-up? Grab a spot before the rush.
+Request service here (30 seconds):
+<YOUR_SYSTEM_LINK>
+
+------------------------------------------------------------
+PINNED POST (short + direct)
+------------------------------------------------------------
+
+🚨 Need HVAC service?
+If we miss your call (busy/on a job/after-hours), use this link:
+<YOUR_SYSTEM_LINK>
+
+We’ll text/call to confirm details ASAP.
+
+------------------------------------------------------------
+MISSED-CALL TEXT SCRIPT (copy/paste)
+------------------------------------------------------------
+
+Hey — sorry we missed you. If you still need HVAC service, use this link to request help and we’ll follow up ASAP:
+<YOUR_SYSTEM_LINK>
+
+------------------------------------------------------------
+INSTALL LOCATIONS (Activation Checklist)
+------------------------------------------------------------
+- Google Business Profile: Website/Appointment link -> <YOUR_SYSTEM_LINK>
+- Facebook: Bio link -> <YOUR_SYSTEM_LINK>
+- Facebook: Pinned post -> use the pinned copy above + <YOUR_SYSTEM_LINK>
+- Text/DM replies: use the missed-call script above
+
+------------------------------------------------------------
+PROOF-OF-LIFE TEST (do immediately after installing)
+------------------------------------------------------------
+1) Click the Call button once (logs: call_click)
+2) Submit the form once (logs: form_submit)
+3) Confirm console shows both events (or GA4 later)

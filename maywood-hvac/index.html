@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Busy-Line HVAC Service Link — Concept Demo</title>
+    <meta
+      name="description"
+      content="Concept demo: missed-call catcher + service request link for HVAC companies. Built to convert busy/after-hours traffic with tracking."
+    />
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./app.js"></script>
+  </head>
+
+  <body>
+    <!-- Top banner (ethical + clear) -->
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <div class="pill">Concept Demo</div>
+        <div class="topbar__text">
+          Busy-Line HVAC Service Link (missed-call catcher + request form) • Not
+          affiliated with any business
+        </div>
+        <a
+          class="topbar__cta"
+          href="../"
+          aria-label="Back to client previews index"
+          >Back</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container hero__grid">
+          <div class="hero__left">
+            <div class="brand">
+              <div class="brand__mark" aria-hidden="true">H</div>
+              <div class="brand__meta">
+                <div class="brand__name">Maywood Heating &amp; Air</div>
+                <div class="brand__sub">
+                  Service Request Link • For busy/after-hours calls
+                </div>
+              </div>
+            </div>
+
+            <div class="kicker">MISSED-CALL CATCHER</div>
+
+            <h1 class="h1">
+              Need HVAC service? <span class="accent">Request help fast</span> —
+              even if we miss your call.
+            </h1>
+
+            <p class="sub">
+              On a job or after-hours? Use this link and we’ll follow up ASAP.
+            </p>
+
+            <div class="cta-row">
+              <a
+                class="btn btn--primary"
+                href="tel:+15555550100"
+                data-track="call_click"
+                >Call Now</a
+              >
+              <a
+                class="btn btn--secondary"
+                href="#request-service"
+                data-track="request_service_scroll"
+                >Request Service</a
+              >
+            </div>
+
+            <div class="trust-row" aria-label="Trust bullets">
+              <div class="trust-pill">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  />
+                  <path
+                    d="M12 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  />
+                </svg>
+                Local service
+              </div>
+
+              <div class="trust-pill">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 6v6l4 2"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  />
+                </svg>
+                Fast follow-up
+              </div>
+
+              <div class="trust-pill">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6l7-4Z"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  />
+                  <path
+                    d="M9.5 12l1.8 1.8L15 10"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Professional technicians
+              </div>
+            </div>
+
+            <p class="micro">
+              Tip: If you tried calling and couldn’t reach us, submit this form
+              — we’ll text/call to confirm details.
+            </p>
+
+            <!-- What happens next (adds “system” feel + perceived value) -->
+            <div class="next-card" aria-label="What happens next">
+              <div class="next-head">
+                <div class="next-title">What happens after you submit</div>
+                <div class="next-badge">Fast follow-up</div>
+              </div>
+
+              <div class="next-grid">
+                <div class="next-item">
+                  <div class="next-icon" aria-hidden="true">✓</div>
+                  <div>
+                    <div class="next-item__title">Instant confirmation</div>
+                    <div class="next-item__text">
+                      We’ll text back to confirm we received your request.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="next-item">
+                  <div class="next-icon" aria-hidden="true">✓</div>
+                  <div>
+                    <div class="next-item__title">
+                      Call within business hours
+                    </div>
+                    <div class="next-item__text">
+                      We’ll call to schedule and verify details.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="next-item">
+                  <div class="next-icon" aria-hidden="true">✓</div>
+                  <div>
+                    <div class="next-item__title">Emergency?</div>
+                    <div class="next-item__text">
+                      If it’s urgent, skip the form and hit
+                      <strong>Call Now</strong>.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__right">
+            <div
+              class="image-card"
+              role="img"
+              aria-label="Technician working image"
+            >
+              <img
+                src="./hvac-tech.png"
+                alt="HVAC technician working"
+                loading="lazy"
+              />
+              <div class="image-card__overlay">
+                <div class="overlay__title">Built for busy lines</div>
+                <div class="overlay__text">
+                  One link. One action. Tracking included — so usage can be
+                  proven.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FORM -->
+      <section class="section" id="request-service">
+        <div class="container">
+          <div class="card form-card">
+            <div class="form-head">
+              <h2 class="h2">Request Service</h2>
+              <div class="small">Takes ~30 seconds</div>
+            </div>
+
+            <p class="form-note">
+              We review requests in order. If you need immediate help, use
+              <a href="tel:+15555550100" data-track="call_click">Call Now</a>.
+            </p>
+
+            <form id="serviceForm" novalidate>
+              <div class="grid-2">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input
+                    id="name"
+                    name="name"
+                    autocomplete="name"
+                    required
+                    placeholder="Your name"
+                  />
+                </div>
+
+                <div class="field">
+                  <label for="phone">Phone</label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    inputmode="tel"
+                    autocomplete="tel"
+                    required
+                    placeholder="(555) 555-0100"
+                  />
+                </div>
+              </div>
+
+              <div class="grid-2 mt">
+                <div class="field">
+                  <label for="city">City / Address</label>
+                  <input
+                    id="city"
+                    name="city"
+                    autocomplete="street-address"
+                    required
+                    placeholder="City or address"
+                  />
+                </div>
+
+                <div class="field">
+                  <label for="serviceNeeded">Service needed</label>
+                  <select id="serviceNeeded" name="serviceNeeded" required>
+                    <option value="" selected disabled>Select one…</option>
+                    <option value="no-heat">No heat</option>
+                    <option value="no-cool">No cool</option>
+                    <option value="maintenance">Maintenance / tune-up</option>
+                    <option value="estimate">Estimate / replacement</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid-2 mt">
+                <div class="field">
+                  <label for="timing">When do you need it?</label>
+                  <select id="timing" name="timing" required>
+                    <option value="" selected disabled>Select one…</option>
+                    <option value="asap">ASAP</option>
+                    <option value="today">Today</option>
+                    <option value="this-week">This week</option>
+                    <option value="flexible">Flexible</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="serviceArea">Are you in our service area?</label>
+                  <select id="serviceArea" name="serviceArea" required>
+                    <option value="" selected disabled>Select one…</option>
+                    <option value="yes">Yes</option>
+                    <option value="not-sure">Not sure</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field mt">
+                <label for="notes">Notes (optional)</label>
+                <textarea
+                  id="notes"
+                  name="notes"
+                  placeholder="Anything we should know before we call/text back?"
+                ></textarea>
+              </div>
+
+              <div class="notice" id="areaWarn" hidden>
+                <strong>Heads up:</strong> If you’re outside our service area,
+                call first — we may not be able to schedule.
+              </div>
+
+              <p class="micro">
+                If you’re outside the area, call first. This helps us avoid
+                wasted scheduling time.
+              </p>
+
+              <div class="cta-row mt">
+                <button
+                  class="btn btn--primary"
+                  type="submit"
+                  data-track="form_submit_btn"
+                >
+                  Submit Request
+                </button>
+                <a
+                  class="btn btn--secondary"
+                  href="tel:+15555550100"
+                  data-track="call_click"
+                  >Call Instead</a
+                >
+              </div>
+
+              <div class="notice notice--ok" id="statusOk" hidden>
+                <strong>Request received.</strong> After you submit: we’ll
+                text/call to confirm details.
+              </div>
+            </form>
+          </div>
+
+          <div class="fineprint">
+            <p>
+              <strong>Concept demo only.</strong> This template demonstrates a
+              “busy-line service link” system.
+            </p>
+            <p>
+              <strong>Image:</strong> add a file named
+              <code>hvac-tech.jpg</code> in this folder (or swap the
+              <code>&lt;img src&gt;</code> to your preferred stock/AI image).
+            </p>
+            <p>
+              Replace the demo phone number and image when deploying for a real
+              client.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sticky mobile CTA -->
+      <div class="sticky" aria-label="Quick actions">
+        <a
+          class="btn btn--primary"
+          href="tel:+15555550100"
+          data-track="call_click"
+          >Call Now</a
+        >
+        <a
+          class="btn btn--secondary"
+          href="#request-service"
+          data-track="request_service_scroll"
+          >Request Service</a
+        >
+      </div>
+    </main>
+  </body>
+</html>
